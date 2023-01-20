@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+.containerr{
+    display: flex;
+}
+
+.course-content{
+    background-image: url("../Assets/courses.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*min-height: 100vh;*/
+    width:100%;
+    background-color: #D3D3D3;
+    height: 700px;
+}
+.field{
+    margin: 20px 0;
+    position: relative;
+    font-size: 14px;
+    width: 100%;
+    text-overflow: ellipsis;
+}
+.field-wrap input{
+    /* padding: 0px 0px 7px 9 px; */
+    font-size: 12px;
+    width: 16rem;
+    height: 6 rem;
+    outline: none;
+    background: #fafafa;
+    border-radius: 1px;
+    border: 10px solid #fafafa;
+
+}
+.label{
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    padding-bottom: 15px;
+    transform: translateY(10px);
+    line-height: 6px;
+    transition: all ease-out 0.1s;
+    font-size: 14px;
+}
+.form{
+    border: solid black;
+    margin-top: 5%;
+    width: 50%;
+    height: 100%;
+    background: rgb(47, 45, 45);
+    padding-left: 4%;
+    padding-right: 5%;
+    margin-left: 20%;
+  }
+  .form h2{
+    color: black;
+    margin-top: 5%;
+    margin-left: 15%;
+    font-weight: 400;
+    font-size: 50px;
+  }
+  .containerr input[type=text]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: black;
+    margin-top: 3%;
+    margin-bottom: 2%;
+  }
+  #btn{
+    background-color: #69a5d0;
+    padding:1% 3%;
+    align-items: center;
+    margin-bottom: 2%;
+    border: none;
+  }
+  .coursebackground{
+    border: solid white;
+    width: 95%;
+    height: 95%;
+    background-image: url("https://unsplash.com/photos/Oalh2MojUuk");
+  }
