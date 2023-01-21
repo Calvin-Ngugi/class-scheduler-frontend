@@ -11,8 +11,6 @@ const CourseForm = ({courses, setCourses}) => {
     setFormData({ ...formdata, [e.target.name]: e.target.value });
   }
   function handleSubmit(e) {
-    e.preventDefault();
-    e.target.reset();
     // console.log(JSON.stringify(formdata))
     fetch("/courses", {
       method: "POST",
@@ -28,8 +26,7 @@ const CourseForm = ({courses, setCourses}) => {
         setCourses(newData)
         console.log(newData)
       })
-      .catch(console.error);
-      e.target.reset();
+      form.reset()
   }
   return (
     <div className="coursebackground">

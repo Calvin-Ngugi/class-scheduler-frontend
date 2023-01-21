@@ -18,12 +18,11 @@ const Session = ({user}) => {
     fetch(`/course_sessions/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setSession(data);
         setComments(data.comments);
         setLoading(true)
       });
-  }, []);
+  }, [session]);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -59,6 +58,8 @@ const Session = ({user}) => {
         <Comments
           key={comm.id}
           comments={comm}
+          setComments={setComments}
+          user={user}
         />
       )
     })

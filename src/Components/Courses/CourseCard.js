@@ -8,7 +8,7 @@ const CourseCard = ({ courses, user , setCourses}) => {
         method: "DELETE",
     })
     .then((res) => res.json())
-    .then(() => {   
+    .then((course) => {   
         const delCard = course.filter((course) => course.id !== courses.id); 
         setCourses(delCard);
       })
