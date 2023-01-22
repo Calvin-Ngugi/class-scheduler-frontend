@@ -45,6 +45,7 @@ const StudentNav = ({ setUser }) => {
               </Link>
             </li>
             <li className="nav-item dropdown justify-content-end ms-3">
+              {/* eslint-disable-next-line*/}
               <a
                 className="nav-link dropdown-toggle"
                 href="#"

@@ -31,9 +31,9 @@ const StudentNav = ({ setUser }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item dropdown ms-3">
+              {/* eslint-disable-next-line*/}
               <a
                 className="nav-link dropdown-toggle"
-                href="#"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -57,6 +57,7 @@ const StudentNav = ({ setUser }) => {
               </ul>
             </li>
             <li className="nav-item dropdown ms-3">
+              {/* eslint-disable-next-line*/}
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
@@ -83,6 +84,7 @@ const StudentNav = ({ setUser }) => {
               </ul>
             </li>
             <li className="nav-item dropdown ms-3">
+              {/* eslint-disable-next-line*/}
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
@@ -101,6 +103,7 @@ const StudentNav = ({ setUser }) => {
               </ul>
             </li>
             <li className="nav-item dropdown ms-3">
+              {/* eslint-disable-next-line*/}
               <a
                 className="nav-link dropdown-toggle"
                 href="#"

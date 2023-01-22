@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import AddSession from "./AddSession";
 import Header from "./Header";
 import Sessions from "./Sessions";
@@ -25,6 +25,7 @@ const SingleCourse = ({ user }) => {
         setCourse(data);
         setSessions(data.course_sessions);
       });
+      // eslint-disable-next-line
   }, []);
 
   const handleChange = (e) => {

@@ -22,6 +22,7 @@ const Session = ({user}) => {
         setComments(data.comments);
         setLoading(true)
       });
+      // eslint-disable-next-line
   }, [session]);
 
   const handleChange = (e) => {

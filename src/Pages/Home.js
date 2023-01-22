@@ -1,10 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 import InstructorDashboard from "../Components/InstructorDashboard";
 import StudentDashboard from "../Components/StudentDashboard";
 
 
-const Home = ({ user, setUser, courses, setCourses }) => {
+const Home = ({ user, courses, setCourses }) => {
 
   if (user) {
     if (user.role === "instructor") {
