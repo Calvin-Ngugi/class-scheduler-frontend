@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import Search from "./Search";
 
 const StudentNav = ({ setUser }) => {
   const history = useHistory();

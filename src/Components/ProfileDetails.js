@@ -18,7 +18,7 @@ const ProfileDetails = ({ profile }) => {
         <img
           className="prof me-5"
           src={profile.profile_img}
-          alt="profile image"
+          alt="profile dp"
         ></img>
       </div>
     </div>

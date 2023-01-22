@@ -26,7 +26,7 @@ const CourseForm = ({courses, setCourses}) => {
         setCourses(newData)
         console.log(newData)
       })
-      form.reset()
+      e.target.reset()
   }
   return (
     <div className="coursebackground">
