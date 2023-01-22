@@ -27,8 +27,8 @@ const Home = ({ user, setUser, courses, setCourses }) => {
       
       <div className="container">
        
-        <h3>Please Login or SignUp to continue...</h3>
-        <Link to={`/login`} className="link">
+        <h3 className="mt-3">Please Login or SignUp to continue...</h3>
+        <Link to={`/login`} className="link btn btn-primary">
           Login
         </Link>
       </div>
