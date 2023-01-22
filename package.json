@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "class-scheduler-frontend",
   "version": "0.1.0",
   "private": true,
   "proxy": "https://class-scheduler-production.up.railway.app",
@@ -18,7 +18,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "set PORT=4000 && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
