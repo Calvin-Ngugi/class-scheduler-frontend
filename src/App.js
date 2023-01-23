@@ -15,6 +15,7 @@ import ProfileForm from "./Components/ProfileForm";
 import Announcements from "./Components/Announcements";
 import AnnouncementForm from "./Components/AnnouncementsForm";
 import Profile from "./Components/Profile";
+import axios from "axios";
 
 
 const App = () => {
@@ -23,38 +24,36 @@ const App = () => {
   const [profile, setProfile] = useState([])
   const [announcements, setAnnouncements] = useState([])
 
-  useEffect(() => {
-    // auto-login
-    fetch("/me").then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
+  const fetchme = () => {
+    axios.get("/me").then((results) => {
+      if(results.ok) {
+        console.log(results);
+        results.json().then((user) => setUser(user));
       }
     });
-  }, []);
+  }
+fetchme();
 
-  useEffect(() => {
-    fetch(`/courses`)
-      .then((res) => res.json())
-      .then((course) => {
-        setCourses(course);
-      });
-  }, []);
-
-  useEffect(() => {
-    fetch(`/announcements`)
-      .then((res) => res.json())
-      .then((ann) => {
-        setAnnouncements(ann);
-      });
-  }, []);
-
-  useEffect(() => {
-    fetch(`/profiles`)
-    .then((res) => res.json())
-    .then((prof) => {
-      setProfile(prof);
+  const fetchcourses = () => {
+    axios.get("/courses").then((results) => {
+      setCourses(results.data);
     });
-  }, []);
+  }
+fetchcourses();
+
+  const fetchAnnouncements = () => {
+    axios.get("/announcements").then((results) => {
+      setAnnouncements(results.data);
+    })
+  }
+  fetchAnnouncements();
+
+  const fetchProfile = () => {
+    axios.get("/profiles").then((results) => {
+      setProfile(results.data);
+    })
+  }
+  fetchProfile();
 
   return (
     <main>
