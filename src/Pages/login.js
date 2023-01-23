@@ -21,8 +21,12 @@ function Login({ setUser }) {
         r.json().then((user) => setUser(user));
         history.push("/")
       }
-      else{
-        r.json().then((err) => setErrors(err.errors));
+      else {
+        if(r.headers.get("content-type").startsWith("application/json")){
+          r.json().then((err) => setErrors(err.errors));
+        }else{
+          console.log("An error occurred and the server didn't return a json")
+        }
       }
     });
   }
