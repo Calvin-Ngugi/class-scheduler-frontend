@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import Error from "../Components/Error"
@@ -9,27 +10,40 @@ function Login({ setUser }) {
   const [password, setPassword] = useState("");
 
   function handleSubmit(e) {
-    e.preventDefault();
-    fetch("/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
-        history.push("/")
-      }
-      else {
-        if(r.headers.get("content-type").startsWith("application/json")){
-          r.json().then((err) => setErrors(err.errors));
-        }else{
-          console.log("An error occurred and the server didn't return a json")
+    e.preventDefault();  
+    axios.post("/login", { email, password })
+      .then(response => {
+        if (response.status === 200) {
+          setUser(response.data);
+          history.push("/")
         }
-      }
-    });
+      })
+      .catch(error => {
+        if (error.response) {
+          setErrors(error.response.data.errors);
+        }
+      });
   }
+    // fetch("/login", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({ email, password }),
+    // }).then((r) => {
+    //   if (r.ok) {
+    //     r.json().then((user) => setUser(user));
+    //     history.push("/")
+    //   }
+    //   else {
+    //     if(r.headers.get("content-type").startsWith("application/json")){
+    //       r.json().then((err) => setErrors(err.errors));
+    //     }else{
+    //       console.log("An error occurred and the server didn't return a json")
+    //     }
+    //   }
+    // });
+  
 
   return (
      <div className="container mt-5">

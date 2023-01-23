@@ -24,36 +24,32 @@ const App = () => {
   const [profile, setProfile] = useState([])
   const [announcements, setAnnouncements] = useState([])
 
-  const fetchme = () => {
-    axios.get("/me").then((results) => {
-      if(results.ok) {
-        console.log(results);
-        results.json().then((user) => setUser(user));
+  useEffect(() => {
+    // auto-login
+    axios.get('/me').then((response) => {
+      if (response.ok) {
+        setUser(response.data);
       }
-    });
-  }
-fetchme();
+    })
+  }, []);
 
-  const fetchcourses = () => {
+  useEffect(() => {
     axios.get("/courses").then((results) => {
       setCourses(results.data);
     });
-  }
-fetchcourses();
+  }, []);
 
-  const fetchAnnouncements = () => {
+  useEffect(() => {
     axios.get("/announcements").then((results) => {
       setAnnouncements(results.data);
-    })
-  }
-  fetchAnnouncements();
+    });
+  }, []);
 
-  const fetchProfile = () => {
+  useEffect(() => {
     axios.get("/profiles").then((results) => {
       setProfile(results.data);
-    })
-  }
-  fetchProfile();
+    });
+  }, []);
 
   return (
     <main>
