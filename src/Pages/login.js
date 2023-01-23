@@ -84,9 +84,9 @@ function Login({ setUser }) {
                 </button>
               </div>
               <div>
-                {errors.map((err) => (
+                {/* {errors.map((err) => (
                   <Error key={err}>{err}</Error>
-                ))}
+                ))} */}
               </div>
               <p className="mt-3">If you don't have an account, <Link to={`/signup`} className="link" >Sign Up Here</Link></p>
             </form>
