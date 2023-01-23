@@ -28,7 +28,7 @@ const App = () => {
     // auto-login
     axios.get('/me').then((response) => {
       if (response.ok) {
-        setUser(response.data);
+        setUser(user);
       }
     })
   }, []);

@@ -9,20 +9,19 @@ function Login({ setUser }) {
   const [errors, setErrors] = useState([]);
   const [password, setPassword] = useState("");
 
-  function handleSubmit(e) {
-    e.preventDefault();  
-    axios.post("/login", { email, password })
-      .then(response => {
+  async function handleSubmit(e) {
+    e.preventDefault();
+    try {
+       const response = await axios.post("/login", { email, password });
         if (response.status === 200) {
           setUser(response.data);
           history.push("/")
         }
-      })
-      .catch(error => {
+      } catch (error) {
         if (error.response) {
           setErrors(error.response.data.errors);
         }
-      });
+      }
   }
     // fetch("/login", {
     //   method: "POST",
