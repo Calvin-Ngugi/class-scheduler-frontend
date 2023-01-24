@@ -26,11 +26,11 @@ const App = () => {
 
   useEffect(() => {
     // auto-login
-    axios.get('/me').then((response) => {
-      if (response.ok) {
-        setUser(user);
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
       }
-    })
+    });
   }, []);
 
   useEffect(() => {
