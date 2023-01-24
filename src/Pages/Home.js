@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import InstructorDashboard from "../Components/InstructorDashboard";
 import StudentDashboard from "../Components/StudentDashboard";
